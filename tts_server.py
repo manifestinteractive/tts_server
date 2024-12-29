@@ -47,10 +47,13 @@ logging.disable(logging.WARNING)
 ########################################################################################
 warnings.filterwarnings("ignore", category=UserWarning, module="torch.nn.utils.weight_norm")
 warnings.filterwarnings("ignore", category=UserWarning, module="torch.nn.functional", lineno=5476)
+
 # Filter ComplexHalf support warning
 warnings.filterwarnings("ignore", message="ComplexHalf support is experimental")
+
 # Filter Flash Attention warning
 warnings.filterwarnings("ignore", message="1Torch was not compiled with flash attention")
+
 ####################
 # Setup local path #
 ####################
@@ -2572,5 +2575,8 @@ def start_server():
     uvicorn_server = uvicorn.run(app, host="0.0.0.0", port=port_to_use, log_level="debug") # pylint: disable=assignment-from-no-return
 
 if __name__ == "__main__":
-    start_server()
+    try:
+        start_server()
+    except KeyboardInterrupt:
+        sys.exit()
     

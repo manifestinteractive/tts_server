@@ -146,3 +146,5 @@ start_alltalk.sh
 start_diagnostics.sh
 start_environment.sh
 start_finetune.sh
+start_server.sh
+tts-server.service
