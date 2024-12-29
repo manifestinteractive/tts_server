@@ -174,7 +174,8 @@ EOF
     cat << EOF > tts-server.service
 [Unit]
 Description=TTS Server Service
-After=network-online.target
+Requires=media-peter-StorageUbuntu.mount
+After=network-online.target media-peter-StorageUbuntu.mount
 StartLimitIntervalSec=0
 
 [Service]
