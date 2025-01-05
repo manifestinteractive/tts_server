@@ -61,7 +61,7 @@ class AlltalkConfigApiDef:
     api_length_stripping: int = 3
     api_max_characters: int = 2000
     api_use_legacy_api: bool = False
-    api_legacy_ip_address: str = "127.0.0.1"
+    api_legacy_ip_address: str = "0.0.0.0"
     api_text_filtering: str = "standard"
     api_narrator_enabled: str = "false"
     api_text_not_inside: str = "character"
